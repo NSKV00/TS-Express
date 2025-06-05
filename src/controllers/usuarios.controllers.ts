@@ -20,3 +20,5 @@ export const deleteUserController=async(req:Request,res:Response):Promise<Respon
     await deleteUserService(userId)
     return res.status(204).send()
 }
+
+//export { deleteUserService }
