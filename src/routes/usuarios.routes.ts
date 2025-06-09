@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { createUserController, deleteUserController, getAllUsersController } from "../controllers/usuarios.controllers";
+import { createUserController, deleteUserController, getAllUsersController, getIdController, retrieveController } from "../controllers/usuarios.controllers";
 import { validateDataMiddleware } from "../middleware/validateData.middleware";
 import { createUserSchema, updateUserSchema } from "../schemas/usuarios.schemas";
 import { validateTokenMiddleware } from "../middleware/validateToken.middleware";
@@ -10,5 +10,5 @@ usuariosRoutes.post("",validateDataMiddleware(createUserSchema), validateTokenMi
 usuariosRoutes.get("",getAllUsersController)
 usuariosRoutes.delete("/:id",validateTokenMiddleware, deleteUserController)
 usuariosRoutes.patch("/:id",validateTokenMiddleware, validateDataMiddleware(updateUserSchema))
-usuariosRoutes.get("retrieve",)
-usuariosRoutes.get("/:id",)
+usuariosRoutes.get("retrieve",validateTokenMiddleware, retrieveController)
+usuariosRoutes.get("/:id", getIdController)
