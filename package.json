@@ -5,12 +5,14 @@
     "dev": "ts-node-dev  --ignore-watch node_modules --cls --rs src/server.ts"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.19",
     "@types/express": "^4.17.22",
     "@types/jsonwebtoken": "^9.0.9",
     "typescript": "^5.8.3"
   },
   "dependencies": {
     "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
     "crypto": "^1.0.1",
     "dot-env": "^0.0.1",
     "express": "^4.21.2",

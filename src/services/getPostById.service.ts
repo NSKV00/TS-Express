@@ -1,20 +1,20 @@
 import { Repository } from "typeorm";
 import { Post, returnPostSchema} from "../schemas/posts.schemas"
-import { Usuarios } from "../entities/usuarios.entitie";
+import { Posts } from "../entities/posts.entitie"
 import { AppDataSource } from "../data-source";
 import { AppError } from "../errors";
 
 export const getPostByIdService=async(postId:number):Promise<Post>=>{
-    const userRepository:Repository<Usuarios> = AppDataSource.getRepository(Usuarios)
+    const postRepository:Repository<Posts> = AppDataSource.getRepository(Posts)
 
-    const findUser:Usuarios|null = await userRepository.findOne({
+    const findPost:Posts|null = await postRepository.findOne({
         where:{
             id:postId
         }
     })
-    if(!findUser){
-        throw new AppError("Usuário não encontrado",404)
+    if(!findPost){
+        throw new AppError("Post não encontrado",404)
     }
-    const user = returnPostSchema.parse(findUser)
+    const user = returnPostSchema.parse(findPost)
     return user
 }
