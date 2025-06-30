@@ -2,7 +2,7 @@ import { Repository } from "typeorm";
 import { AppDataSource } from "../data-source";
 import { Posts } from "../entities/posts.entitie";
 import {deleteUserController} from "../controllers/usuarios.controllers"
-import { CreateLogin } from "../schemas/login.schemas";
+import { iCreateLogin } from "../schemas/login.schemas";
 import { AppError } from "../errors";
 import {compare} from "bcryptjs"
 import jwt from "jsonwebtoken"
