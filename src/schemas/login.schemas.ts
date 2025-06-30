@@ -10,8 +10,8 @@ export const returnLoginSchema = z.object({
     token:z.string()
 })
 
-export type CreateLogin = z.infer<typeof createLoginSchema>
-export type RetunrLogin = z.infer<typeof returnLoginSchema>
+export type iCreateLogin = z.infer<typeof createLoginSchema>
+export type iRetunrLogin = z.infer<typeof returnLoginSchema>
 
 // import { DeepPartial } from "typeorm"
 // import{z} from "zod"
