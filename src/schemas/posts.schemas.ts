@@ -8,7 +8,8 @@ export const craetePostsSchema = z.object({
 })
 export const returnPostSchema = craetePostsSchema.extend({
     id: z.number(),
-    usuario: returnUserSchema.pick({id:true})
+    usuario: returnUserSchema
+    
 })
 export const returnAllPostsSchema = returnPostSchema.array()
 
